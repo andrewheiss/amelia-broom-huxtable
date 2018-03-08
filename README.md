@@ -5,9 +5,9 @@
 
 -----
 
-*tl;dr*: Use the functions in [`broomify-amelia.R`](path/here) to use
-`broom::tidy()`, `broom::glance()`, and `huxtable::huxreg()` on lists of
-multiply imputed models.
+*tl;dr*: Use the functions in [`broomify-amelia.R`](broomify-amelia.R)
+to use `broom::tidy()`, `broom::glance()`, and `huxtable::huxreg()` on
+lists of multiply imputed models.
 
 -----
 
@@ -179,9 +179,10 @@ of model. In this example I’ve named it `melded`, but it could be
 anything. Here are three functions designed to work on `melded` objects
 (the code for these is largely based on [the previous post about melding
 coefficients](https://www.andrewheiss.com/blog/2018/03/07/amelia-tidy-melding/)).
-These functions are also found in [`broomify-amelia.R`](path/here),
-which you can add to your project (maybe someday this could be an actual
-package, but I don’t see a reason for it yet).
+These functions are also found in
+[`broomify-amelia.R`](broomify-amelia.R), which you can add to your
+project (maybe someday this could be an actual package, but I don’t see
+a reason for it yet).
 
 ``` r
 tidy.melded <- function(x, conf.int = FALSE, conf.level = 0.95) {

@@ -24,7 +24,7 @@ knitr::read_chunk("broomify-amelia.R")
 
 ---
 
-*tl;dr*: Use the functions in [`broomify-amelia.R`](path/here) to use `broom::tidy()`, `broom::glance()`, and `huxtable::huxreg()` on lists of multiply imputed models.
+*tl;dr*: Use the functions in [`broomify-amelia.R`](broomify-amelia.R) to use `broom::tidy()`, `broom::glance()`, and `huxtable::huxreg()` on lists of multiply imputed models.
 
 ---
 
@@ -83,7 +83,7 @@ models_imputed_df
 
 Before we do anything with the models in `models_imputed_df$model`, first we can define a few functions to extend broom. R's S3 object system means that a function named `whatever.blah()` will automatically work when called on objects with the class `blah`. This is how broom generally works—there are functions named `tidy.anova()`, `tidy.glm()`, `tidy.lm()`, etc. that will do the correct tidying when run on `anova`, `glm`, and `lm` objects. Huxtable also takes advantage of this S3 object system—it will call the appropriate tidy and glance functions based on the class of the models passed to it.
 
-To make a list of models work with broom, we need to invent a new class of model. In this example I've named it `melded`, but it could be anything. Here are three functions designed to work on `melded` objects (the code for these is largely based on [the previous post about melding coefficients](https://www.andrewheiss.com/blog/2018/03/07/amelia-tidy-melding/)). These functions are also found in [`broomify-amelia.R`](path/here), which you can add to your project (maybe someday this could be an actual package, but I don't see a reason for it yet).
+To make a list of models work with broom, we need to invent a new class of model. In this example I've named it `melded`, but it could be anything. Here are three functions designed to work on `melded` objects (the code for these is largely based on [the previous post about melding coefficients](https://www.andrewheiss.com/blog/2018/03/07/amelia-tidy-melding/)). These functions are also found in [`broomify-amelia.R`](broomify-amelia.R), which you can add to your project (maybe someday this could be an actual package, but I don't see a reason for it yet).
 
 ```{r broomify, message=FALSE}
 ```
